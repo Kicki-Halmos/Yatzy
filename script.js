@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     let player1_ones_field = document.getElementById("player1_ones");
     let player1_twos_field = document.getElementById("player1_twos");
 
-    btnCalc.addEventListener("change", function(e) {
+    player1_ones_field.addEventListener("change", function(e) {
         let sum = 0;
         let tmp = 0;
 
