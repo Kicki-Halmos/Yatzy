@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(e) {
-    let btnCalc = document.getElementById("calc");
+    //let btnCalc = document.getElementById("calc");
     let sumField = document.getElementById("player1_sum");
     let bonusField = document.getElementById("player1_bonus");
 
