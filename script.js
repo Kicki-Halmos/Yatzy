@@ -3,8 +3,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
     let sumField = document.getElementById("player1_sum");
     let bonusField = document.getElementById("player1_bonus");
 
-    let player1_ones_field = document.getElementById("player1_ones");
-    let player1_twos_field = document.getElementById("player1_twos");
+    let player1_1_field = document.getElementById("player1_1");
+    let player1_2_field = document.getElementById("player1_2");
+    let player1_3_field = document.getElementById("player1_3");
+    let player1_4_field = document.getElementById("player1_4");
+
 
     player1_ones_field.addEventListener("change", function(e) {
         let sum = 0;
