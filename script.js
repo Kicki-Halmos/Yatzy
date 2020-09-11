@@ -10,16 +10,37 @@ document.addEventListener("DOMContentLoaded", function(e) {
         let sum = 0;
         let tmp = 0;
 
-        tmp = player1_ones_field.value;
+        tmp = player1_1.value;
         if (typeof(Number(tmp)) === "number") {
             sum += Number(tmp);
         }
 
-        tmp = player1_twos_field.value;
-        if (!isNaN(Number(tmp))) {
+        tmp = player1_2.value;
+        if (typeof(Number(tmp)) === "number") {
             sum += Number(tmp);
         }
 
+        tmp = player1_3.value;
+        if (typeof(Number(tmp)) === "number") {
+            sum += Number(tmp);
+        }
+
+        tmp = player1_4.value;
+        if (typeof(Number(tmp)) === "number") {
+            sum += Number(tmp);
+        }
+
+        tmp = player1_5.value;
+        if (typeof(Number(tmp)) === "number") {
+            sum += Number(tmp);
+        }
+
+        tmp = player1_6.value;
+        if (typeof(Number(tmp)) === "number") {
+            sum += Number(tmp);
+        }
+
+        
         sumField.value = sum;
         
         let bonus = 0;
