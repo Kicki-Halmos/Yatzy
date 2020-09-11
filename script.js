@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function(e) {
-    let btnCalc = document.getElementById("calc");
+    //let btnCalc = document.getElementById("calc");
     let sumField = document.getElementById("player1_sum");
     let bonusField = document.getElementById("player1_bonus");
 
     let player1_ones_field = document.getElementById("player1_ones");
     let player1_twos_field = document.getElementById("player1_twos");
 
-    btnCalc.addEventListener("click", function(e) {
+    player1_ones_field.addEventListener("change", function(e) {
         let sum = 0;
         let tmp = 0;
 
