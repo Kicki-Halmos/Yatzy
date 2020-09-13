@@ -3,10 +3,14 @@ document.addEventListener("DOMContentLoaded", function(e) {
     let sumField = document.getElementById("player1_sum");
     let bonusField = document.getElementById("player1_bonus");
 
-    let player1_ones_field = document.getElementById("player1_ones");
-    let player1_twos_field = document.getElementById("player1_twos");
+    let player1_1 = document.getElementById("player1_1");
+    let player1_2 = document.getElementById("player1_2");
+    let player1_3 = document.getElementById("player1_3");
+    let player1_4 = document.getElementById("player1_4");
+    let player1_5 = document.getElementById("player1_5");
+    let player1_6 = document.getElementById("player1_6");
 
-    player1_ones_field.addEventListener("change", function(e) {
+    player1_1.addEventListener("change", function() {
         let sum = 0;
         let tmp = 0;
 
