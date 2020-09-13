@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(e) {
+document.addEventListener("DOMContentLoaded", function() {
     //let btnCalc = document.getElementById("calc");
     let sumField = document.getElementById("player1_sum");
     let bonusField = document.getElementById("player1_bonus");
@@ -10,7 +10,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
     let player1_5 = document.getElementById("player1_5");
     let player1_6 = document.getElementById("player1_6");
 
-    player1_1.addEventListener("change", function() {
+    let player1_onesToSixes = document.getElementsByClassName("p1_onesToSixes");
+
+    player1_onesToSixes.addEventListener("change", function() {
         let sum = 0;
         let tmp = 0;
 
@@ -53,5 +55,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
         }
         bonusField.value = bonus;
     })
+    console.log(player1_onesToSixes);
 })
+
+
 
