@@ -3,20 +3,11 @@ document.addEventListener("DOMContentLoaded", function() {
     let sumField = document.getElementById("player1_sum");
     let bonusField = document.getElementById("player1_bonus");
 
-<<<<<<< HEAD
     let player1_1_field = document.getElementById("player1_1");
     let player1_2_field = document.getElementById("player1_2");
     let player1_3_field = document.getElementById("player1_3");
     let player1_4_field = document.getElementById("player1_4");
 
-=======
-    let player1_1 = document.getElementById("player1_1");
-    let player1_2 = document.getElementById("player1_2");
-    let player1_3 = document.getElementById("player1_3");
-    let player1_4 = document.getElementById("player1_4");
-    let player1_5 = document.getElementById("player1_5");
-    let player1_6 = document.getElementById("player1_6");
->>>>>>> c974841bcf98d2f71996e7303ae6ebabfeddefe8
 
     let player1_onesToSixes = document.getElementsByClassName("p1_onesToSixes");
 
