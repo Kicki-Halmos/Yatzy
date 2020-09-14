@@ -1,17 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
-    //let btnCalc = document.getElementById("calc");
-    let sumField = document.getElementById("player1_sum");
-    let bonusField = document.getElementById("player1_bonus");
-
-    let player1_1_field = document.getElementById("player1_1");
-    let player1_2_field = document.getElementById("player1_2");
-    let player1_3_field = document.getElementById("player1_3");
-    let player1_4_field = document.getElementById("player1_4");
+    
+}); 
 
 
-    let player1_onesToSixes = document.getElementsByClassName("p1_onesToSixes");
-
-    player1_onesToSixes.addEventListener("change", function() {
+    function calculate(){
+        let sumField = document.getElementById("player1_sum");
+        let bonusField = document.getElementById("player1_bonus");
+        
+        event.preventDefault();
         let sum = 0;
         let tmp = 0;
 
@@ -53,9 +49,51 @@ document.addEventListener("DOMContentLoaded", function() {
             bonus = 50;
         }
         bonusField.value = bonus;
-    })
-    console.log(player1_onesToSixes);
-})
+
+    }
+    
+    document.addEventListener("change", calculate);
+
+    let button_1= document.getElementById("button_1");
+   
+    let input = document.getElementById("input");
+
+    function throw_dice() {
+        event.preventDefault();
+        let dice=0;
+        
+        
+        for (let i=1; i<=5; i++)
+        {
+            if (! document.getElementById("check_" +i).checked){
+            dice=Math.floor(Math.random() * 6) + 1;
+            document.getElementById("input_" + i ).value  = dice;
+            }
+        }
+
+        
+    }
+
+   button_1.addEventListener("click", throw_dice);
+
+
+
+/*      
+
+                for (let i = 1; i <= 4; i++) {
+            for (let j = 1; i <= 6; i++){
+                tmp = document.getElementById("player" + i + "_" + j).value;
+                if (typeof(Number(tmp)) === "number") {
+                    sum += Number(tmp);
+                    
+            }
+            
+        }
+        document.getElementById("player" + i + "_sum");
+    }
+    })*/
+    
+
 
 
 
