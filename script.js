@@ -55,8 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener("change", calculate);
 
     let button_1= document.getElementById("button_1");
-   
-    let input = document.getElementById("input");
+   let input = document.getElementById("input");
 
     function throw_dice() {
         event.preventDefault();
