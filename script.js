@@ -27,6 +27,12 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     console.log(checkArray);
 
+    let sumArray = player1_onesToSixes.reduce((acc, currValue, currIndex, array) =>{
+    return acc + Number(currValue.value);
+    }, 0);
+    console.log(sumArray);
+    
+
    /* player1_onesToSixes.addEventListener("change", function() {
         let sum = 0;
         let tmp = 0;
