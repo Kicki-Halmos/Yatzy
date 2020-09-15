@@ -13,6 +13,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     let player1_onesToSixes = document.getElementsByClassName("p1_onesToSixes");
+    let myArray = player1_onesToSixes.map((element, index, array) => {
+        return element.value;
+    });
+    console.log(myArray);
 
     player1_onesToSixes.addEventListener("change", function() {
         let sum = 0;
