@@ -13,12 +13,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     let player1_onesToSixes = document.getElementsByClassName("p1_onesToSixes");
-    let myArray = player1_onesToSixes.map((element, index, array) => {
-        return element.value;
+    player1_onesToSixes = Array.from(player1_onesToSixes); //convert to array
+    let myArray = [];
+    myArray = player1_onesToSixes.map((element, index, array) => {
+        return Number(element.value);
     });
     console.log(myArray);
 
-    player1_onesToSixes.addEventListener("change", function() {
+   /* player1_onesToSixes.addEventListener("change", function() {
         let sum = 0;
         let tmp = 0;
 
@@ -61,8 +63,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         bonusField.value = bonus;
     })
-    console.log(player1_onesToSixes);
-})
+    console.log(player1_onesToSixes);*/
+});
 
 
 
