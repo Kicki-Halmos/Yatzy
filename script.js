@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
 }); 
 
 
-    function calculate(){
+    function calculate(event){
         let sumField = document.getElementById("player1_sum");
         let bonusField = document.getElementById("player1_bonus");
         
@@ -11,7 +11,19 @@ document.addEventListener("DOMContentLoaded", function() {
         let sum = 0;
         let tmp = 0;
 
-        tmp = player1_1.value;
+        for (let i = 1; i <= 4; i++) {
+            for (let j = 1; j <= 6; j++){
+                tmp = document.getElementById("player" + i + "_" + j).value;
+                if (typeof(Number(tmp)) === "number") {
+                    sum += Number(tmp);
+                } 
+            }
+          
+            document.getElementById("player" + i + "_sum").value= sum;
+        }
+    }
+
+       /* tmp = player1_1.value;
         if (typeof(Number(tmp)) === "number") {
             sum += Number(tmp);
         }
@@ -50,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         bonusField.value = bonus;
 
-    }
+    }*/
     
     document.addEventListener("change", calculate);
 
@@ -79,17 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /*      
 
-                for (let i = 1; i <= 4; i++) {
-            for (let j = 1; i <= 6; i++){
-                tmp = document.getElementById("player" + i + "_" + j).value;
-                if (typeof(Number(tmp)) === "number") {
-                    sum += Number(tmp);
-                    
-            }
-            
-        }
-        document.getElementById("player" + i + "_sum");
-    }
+ 
     })*/
     
 
