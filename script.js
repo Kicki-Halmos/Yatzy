@@ -14,11 +14,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let player1_onesToSixes = document.getElementsByClassName("p1_onesToSixes");
     player1_onesToSixes = Array.from(player1_onesToSixes); //convert to array
-    let myArray = [];
-    myArray = player1_onesToSixes.map((element, index, array) => {
+    let myArray = player1_onesToSixes.map((element, index, array) => {
         return Number(element.value);
     });
     console.log(myArray);
+
+    let check = document.getElementsByClassName("check");
+    check = Array.from(check);
+    let checkArray = check.filter((value, index, array)=> {
+        return value.checked;
+        
+    });
+    console.log(checkArray);
 
    /* player1_onesToSixes.addEventListener("change", function() {
         let sum = 0;
