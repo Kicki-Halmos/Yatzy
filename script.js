@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 }); 
 
+//beräkning av summa 1-6or och testar bonus
 function calculate(event){
     event.preventDefault();
     for (let i =1; i<=4; i++){
@@ -19,33 +20,10 @@ function calculate(event){
     document.getElementById("player" + i + "_bonus").innerHTML= bonus;
 
     }
-}   /*
-    function calculate(event){
-     event.preventDefault();
-      
-
-        for (let i = 1; i <= 4; i++) {
-            let sum = 0;
-            let tmp = 0;
-            let bonus = 0;
-            for (let j = 1; j <= 6; j++){
-                tmp = document.getElementById("player" + i + "_" + j).value;
-                if (typeof(Number(tmp)) === "number") {
-                    sum += Number(tmp);
-                    if(sum >= 63){
-                        bonus = 50;
-                    }
-                  
-                } 
-          
-            }
-            document.getElementById("player" + i + "_sum").innerHTML= sum;
-            document.getElementById("player" + i + "_bonus").innerHTML= bonus;
-        }
-    }*/
+} 
 
   
-    
+    //kör calculatefunctionen när man trycker enter
     document.addEventListener("keyup", function(event){
        if(event.code === "Enter"){
             event.preventDefault();
@@ -53,13 +31,14 @@ function calculate(event){
         }
     });
 
-    let button_1= document.getElementById("button_1");
-    
 
+
+    let button_1= document.getElementById("button_1");  //knapp för att slå tärningar
+
+    //funktion för att slumpa tärningar
     function throw_dice(event) {
         event.preventDefault();
         let dice=0;
-        
         
         for (let i=1; i<=5; i++)
         {
@@ -78,7 +57,7 @@ function calculate(event){
         
     }
 
-   button_1.addEventListener("click", throw_dice);
+   button_1.addEventListener("click", throw_dice);  //eventlyssnare som kör funktionen throw_dice
 
 
 
