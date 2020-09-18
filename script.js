@@ -7,15 +7,17 @@ function calculate(event){
     event.preventDefault();
     for (let i =1; i<=4; i++){
         let elements = document.getElementsByClassName("player" + i);
-        sum = 0;
+        let sum = 0;
+        let bonus = 0;
         for(let element of elements){
             sum += Number(element.value);
-            if(sum >= 63){
-                bonus = 50;
-            }
+           }
+           if(sum >= 63){
+            bonus = 50;
         }
     document.getElementById("player" + i + "_sum").innerHTML= sum;
     document.getElementById("player" + i + "_bonus").innerHTML= bonus;
+
     }
 }   /*
     function calculate(event){
