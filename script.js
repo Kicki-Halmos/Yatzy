@@ -46,7 +46,12 @@ function calculate(event){
 
   
     
-    document.addEventListener("change", calculate);
+    document.addEventListener("keyup", function(event){
+       if(event.code === "Enter"){
+            event.preventDefault();
+            calculate(event);
+        }
+    });
 
     let button_1= document.getElementById("button_1");
     
