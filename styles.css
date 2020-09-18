@@ -1,62 +1,84 @@
-* {
-    margin: 0;
+body{
+    background-color:linen;
 }
 
 table {
-    margin-top: 30px;
-    margin-left: 30px;
-    border: 2px solid black;
-    border-collapse: collapse;
-    table-layout: fixed;
-    width: 400px;
+    table-layout: auto;
+    width:450px;
+    margin: auto;
+    margin-top: 50px;
+    color: rgb(78, 78, 202);
 }
 
-input {
+table, th, td{
+    border: 1px solid rgb(202, 80, 100);
+    border-collapse: collapse;
+    font-family: Chalkboard;
+}
+
+td{
+    width: 1%;
+}
+
+
+td:nth-child(even)
+{
+    background-color: rgb(247, 136, 154);
+}
+th {
+    background-color: rgb(250, 201, 209);
+}
+
+td.first{
+    
+    background-color:rgb(203, 216, 230);
+    
+}
+input{
+    background-color: inherit;
+    color:inherit;
+    border: none;
+    padding: 0;
+    margin: 0;
     width: 100%;
-    border-collapse: collapse;
-    padding: 0px;
-    border: 0px solid black;
-    height: 30px;
+    height: 22px;
     text-align: center;
+    font-size: 10pt;
 }
 
-.thick-border {
-    border: 2px solid black;
+div{
+    position: relative;
+    width: 100%;
 }
 
-td {
-    padding: 0px;
-    border: 1px solid black;
-    height: 20px;
-}
-
-button {
-    margin-left: 30px;
-    margin-top: 10px;
-}
-
-
-.light {
-    background-color: #EDEDED;
+div.buttons{
+    text-align: center;
+    background-color: rgb(78, 78, 202);
 
 }
 
-.dark {
-    background-color: #BFBFBF;
+button{
+    color: rgb(235, 80, 106);
+    
 }
 
-.darker {
-    background-color: #949494
+form.dices{
+    font-family: Chalkboard;
+    color: rgb(202, 80, 100);
 }
 
-.block {
-    background-color: red;
-    display: inline;
+img.dices{
+    margin: 20px;
+    width: 50px;
+    height: 50px;
+    border: 3px solid  rgb(78, 78, 202);
+    border-radius: 10px;
+   
 }
-input.dices{
-    margin-left: 30px;
-    margin-top: 10px;
-    border: 1px solid black;
-    width: 10%;
 
+img.dices{
+    margin: 20px;
+    width: 50px;
+    height: 50px;
+    background-color:rgb(250, 201, 209);
 }
