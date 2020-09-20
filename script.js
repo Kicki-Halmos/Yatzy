@@ -25,10 +25,11 @@ function calculate(event){
   
     //kör calculatefunctionen när man trycker enter
     document.addEventListener("keyup", function(event){
-       if(event.code === "Enter"){
+       /* if(event.code === "Enter"){
             event.preventDefault();
             calculate(event);
-        }
+        } */
+        calculate(event);
     });
 
 
@@ -37,7 +38,7 @@ function calculate(event){
 
     //funktion för att slumpa tärningar
     function throw_dice(event) {
-        event.preventDefault();
+        //event.preventDefault(); - behövs ej efter att ha flyttat ut throw-knappen ur dice-form.
         let dice=0;
         
         for (let i=1; i<=5; i++)
@@ -50,6 +51,7 @@ function calculate(event){
                 {
                     image.src = "img/dice_" + j + ".png";
                 }
+            
             }
         }
     }
