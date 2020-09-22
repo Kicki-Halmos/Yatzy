@@ -95,7 +95,7 @@ for (let i = 1; i <= 5; i++) {
         event.preventDefault();
         if (event.target.tagName != "IMG")
             dice = Math.floor(Math.random() * 6) + 1;
-        for (let j = 1; j <= 6; j++) {
+            for (let j = 1; j <= 6; j++) {
 
             if (dice == j) {
                 dice_image.src = "img/dice_" + j + ".png";
