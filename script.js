@@ -44,6 +44,7 @@ document.addEventListener("keyup", function (event) {
 
 let button_1 = document.getElementById("button_1"); //knapp för att slå tärningar
 
+let lastDiceResult = [];  // skapar array för alla sista positioner tjarningar
 
 
 
@@ -60,6 +61,7 @@ function throw_dice(event) {
         // Minskar remaining throws med ett varje gång man klickar på knappen, och kör bara funktionen om remaining_throws är större än 0. 
 
         let dice = 0;
+        let diceResult = []; // skapar array för alla positioner tjarningar
         for (let i = 1; i <= 5; i++) {
             if (!document.getElementById("check_" + i).checked) {
                 dice = Math.floor(Math.random() * 6) + 1;
@@ -68,11 +70,14 @@ function throw_dice(event) {
                     if (dice == j) {
                         image.src = "img/dice_" + j + ".png";
                     }
-
                 }
+                diceResult.push(dice); // push nya values till array.
+            } else {
+                diceResult.push(lastDiceResult[i-1]); // push nya values till array.
             }
         }
-        
+        lastDiceResult = diceResult.slice();
+        updateTable(diceResult);        
     }
 
     if (remaining_throws.innerHTML == 0) {  //hoppar ur funktionen throw_dice
@@ -106,3 +111,29 @@ for (let i = 1; i <= 5; i++) {
 }
 
 */
+
+let updateTable = function (diceResult) {
+  const result = countDice(diceResult);
+  
+  for (let i = 0; i < 6; i++) {
+    if (result[i] === 0) {
+        document.getElementById('player1_' + (i + 1)).value = '';
+    } else {
+        document.getElementById('player1_' + (i + 1)).value = result[i] * (i+1);
+    }
+  }
+}
+
+// Skapa nu array for values hur många tärningar som visar desamma prickar.
+let countDice = function(dice) {
+    let values = [];
+    
+    for (let i = 0; i <= 5; i++) {
+        values[i] = 0;
+    }
+    for (let current_dice of dice) {
+          values[current_dice - 1]++;
+    }
+    console.log(values);
+    return values;
+};
