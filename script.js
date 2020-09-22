@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
 
 });
@@ -23,7 +23,7 @@ function calculate(event) {
 
 
 //kör calculatefunctionen när man trycker enter
-document.addEventListener("keyup", function(event) {
+document.addEventListener("keyup", function (event) {
     /* if(event.code === "Enter"){
          event.preventDefault();
          calculate(event);
@@ -46,16 +46,11 @@ function throw_dice(event) {
 
     if (remaining_throws.innerHTML > 0) {
         remaining_throws.innerHTML -= 1;
+       
 
         // Minskar remaining throws med ett varje gång man klickar på knappen, och kör bara funktionen om remaining_throws är större än 0. 
 
-
-
-
-
-        //event.preventDefault(); - behövs ej efter att ha flyttat ut throw-knappen ur dice-form.
         let dice = 0;
-
         for (let i = 1; i <= 5; i++) {
             if (!document.getElementById("check_" + i).checked) {
                 dice = Math.floor(Math.random() * 6) + 1;
@@ -68,8 +63,34 @@ function throw_dice(event) {
                 }
             }
         }
+        
+    }
+    if (remaining_throws.innerHTML == 0) {
+        return;
     }
 
 }
 
+
+
 button_1.addEventListener("click", throw_dice); //eventlyssnare som kör funktionen throw_dice
+
+
+/*
+for (let i = 1; i <= 5; i++) {
+    let dice_image = document.getElementById("img_" + i)
+    dice_image.addEventListener("click", function (event) {
+        event.preventDefault();
+        if (event.target.tagName != "IMG")
+            dice = Math.floor(Math.random() * 6) + 1;
+        for (let j = 1; j <= 6; j++) {
+
+            if (dice == j) {
+                dice_image.src = "img/dice_" + j + ".png";
+            }
+
+        }
+    });
+}
+
+*/
