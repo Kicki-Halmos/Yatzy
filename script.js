@@ -65,7 +65,7 @@ function throw_dice(event) {
         }
         
     }
-    if (remaining_throws.innerHTML == 0) {
+    if (remaining_throws.innerHTML == 0) {  //hoppar ur funktionen throw_dice
         return;
     }
 
@@ -76,6 +76,8 @@ function throw_dice(event) {
 button_1.addEventListener("click", throw_dice); //eventlyssnare som kör funktionen throw_dice
 
 
+
+//försök till att byta ut checkbox o klicka på bilder istället - fick det ej att funka
 /*
 for (let i = 1; i <= 5; i++) {
     let dice_image = document.getElementById("img_" + i)
