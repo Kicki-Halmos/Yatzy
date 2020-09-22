@@ -41,32 +41,34 @@ let button_1 = document.getElementById("button_1"); //knapp för att slå tärni
 
 //funktion för att slumpa tärningar
 function throw_dice(event) {
-    console.log("hello");
 
     let remaining_throws = document.getElementById("remaining_throws");
 
-    remaining_throws.innerHTML -= 1; // Remaining throws blir - 1 varje gång man klickar på knappen. 
+    if (remaining_throws.innerHTML > 0) {
+        remaining_throws.innerHTML -= 1;
+
+        // Minskar remaining throws med ett varje gång man klickar på knappen, och kör bara funktionen om remaining_throws är större än 0. 
 
 
 
 
 
-    //event.preventDefault(); - behövs ej efter att ha flyttat ut throw-knappen ur dice-form.
-    let dice = 0;
+        //event.preventDefault(); - behövs ej efter att ha flyttat ut throw-knappen ur dice-form.
+        let dice = 0;
 
-    for (let i = 1; i <= 5; i++) {
-        if (!document.getElementById("check_" + i).checked) {
-            dice = Math.floor(Math.random() * 6) + 1;
-            for (let j = 1; j <= 6; j++) {
-                let image = document.getElementById("img_" + i);
-                if (dice == j) {
-                    image.src = "img/dice_" + j + ".png";
+        for (let i = 1; i <= 5; i++) {
+            if (!document.getElementById("check_" + i).checked) {
+                dice = Math.floor(Math.random() * 6) + 1;
+                for (let j = 1; j <= 6; j++) {
+                    let image = document.getElementById("img_" + i);
+                    if (dice == j) {
+                        image.src = "img/dice_" + j + ".png";
+                    }
+
                 }
-
             }
         }
     }
-
 
 }
 
