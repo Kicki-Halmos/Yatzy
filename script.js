@@ -44,7 +44,7 @@ document.addEventListener("keyup", function (event) {
 
 let button_1 = document.getElementById("button_1"); //knapp för att slå tärningar
 
-let lastDiceResult = [];  // skapar array för alla sista positioner tjarningar
+//let lastDiceResult = [];  // skapar array för alla sista positioner tjarningar
 
 
 
@@ -95,7 +95,7 @@ function throw_dice(event) {
 
 button_1.addEventListener("click", throw_dice); //eventlyssnare som kör funktionen throw_dice
 
-let updateTable = function (diceResult) { //define function för att fyller kolumner automatisk.
+/* let updateTable = function (diceResult) { //define function för att fyller kolumner automatisk.
     const result = countDice(diceResult);// invoke a function countDice with diceResult
     for (let i = 0; i < 6; i++) {
       if (result[i] === 0) {
@@ -116,4 +116,4 @@ let updateTable = function (diceResult) { //define function för att fyller kolu
       }
       console.log(values);
       return values;
-  };
+  }; */
