@@ -44,14 +44,8 @@ function throw_dice(event) {
 
     let remaining_throws = document.getElementById("remaining_throws");
 
-    if (remaining_throws.innerHTML > 0) {
-        remaining_throws.innerHTML -= 1;
-
-        // Minskar remaining throws med ett varje gång man klickar på knappen, och kör bara funktionen om remaining_throws är större än 0. 
-
-
-
-
+    if (remaining_throws.innerHTML >= 0) { // Minskar remaining throws med ett varje gång man klickar på knappen,
+        remaining_throws.innerHTML -= 1; //och kör bara funktionen om remaining_throws är större än 0. 
 
         //event.preventDefault(); - behövs ej efter att ha flyttat ut throw-knappen ur dice-form.
         let dice = 0;
@@ -70,6 +64,19 @@ function throw_dice(event) {
         }
     }
 
+    if (remaining_throws.innerHTML == -1) { // När remaining throws är -1 så sätter vi om värdet på remaining throws till 3. 
+        remaining_throws.innerHTML = 3; // I koden under så återställer vi tärningarna till 1 och gör icheckade boxar urcheckade. 
+
+        for (let j = 1; j <= 5; j++) {
+            let image = document.getElementById("img_" + j);
+            image.src = "img/dice_" + 1 + ".png";
+            if (document.getElementById("check_" + j).checked) {
+                document.getElementById("check_" + j).checked = false;
+            }
+        }
+    }
 }
+
+
 
 button_1.addEventListener("click", throw_dice); //eventlyssnare som kör funktionen throw_dice
