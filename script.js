@@ -37,6 +37,7 @@ document.addEventListener("keyup", function (event) {
          event.preventDefault();
          calculate(event);
      } */
+     
     calculate(event);
 });
 
@@ -69,13 +70,13 @@ function throw_dice(event) {
                         image.src = "img/dice_" + j + ".png";
                     }
                 }
-                diceResult.push(dice); // push nya values till array.
-            } else {
-                diceResult.push(lastDiceResult[i-1]); // push nya values till array.
-            }
+                //diceResult.push(dice); // push nya values till array.
+            } //else {
+                //diceResult.push(lastDiceResult[i-1]); // push nya values till array.
+            //}
         }
-        lastDiceResult = diceResult.slice();
-        updateTable(diceResult);        
+        //lastDiceResult = diceResult.slice();
+        //updateTable(diceResult);        
     }
 
     if (remaining_throws.innerHTML == -1) { // När remaining throws är -1 så sätter vi om värdet på remaining throws till 3. 
