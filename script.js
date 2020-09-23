@@ -94,3 +94,26 @@ function throw_dice(event) {
 
 
 button_1.addEventListener("click", throw_dice); //eventlyssnare som kör funktionen throw_dice
+
+let updateTable = function (diceResult) { //define function för att fyller kolumner automatisk.
+    const result = countDice(diceResult);// invoke a function countDice with diceResult
+    for (let i = 0; i < 6; i++) {
+      if (result[i] === 0) {
+          document.getElementById("player1_" + (i + 1)).value = ""; //fyller kolumner
+      } else {
+          document.getElementById("player1_" + (i + 1)).value = result[i] * (i+1);
+      }
+    }
+  }
+  // Skapa nu array for values hur många tärningar som visar desamma prickar.
+  let countDice = function(dice) { //define function för att skriva resultaten av kast (hur många ones, twos finns)
+      let values = [];
+      for (let i = 0; i <= 5; i++) { // Att första let varje i på nytt array bli 0.
+          values[i] = 0;
+      }
+      for (let current_dice of dice) { //går igenom array med tärningar positioner
+            values[current_dice - 1]++; // och att skriva value oa varje element på i-element av nytt array (nytt array har 6 element-positioner men ve har 5 tärningar från första array)
+      }
+      console.log(values);
+      return values;
+  };
