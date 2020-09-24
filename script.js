@@ -1,62 +1,48 @@
 document.addEventListener("DOMContentLoaded", function() {
-    //let btnCalc = document.getElementById("calc");
-    let sumField = document.getElementById("player1_sum");
-    let bonusField = document.getElementById("player1_bonus");
+    let game = new Game();
+    let player = new Player();
+    let button_1 = document.getElementById("button_1");
 
-    let player1_1 = document.getElementById("player1_1");
-    let player1_2 = document.getElementById("player1_2");
-    let player1_3 = document.getElementById("player1_3");
-    let player1_4 = document.getElementById("player1_4");
-    let player1_5 = document.getElementById("player1_5");
-    let player1_6 = document.getElementById("player1_6");
+    button_1.addEventListener("click", throw_dice); 
+    document.addEventListener("change", function(event) {
 
-    let player1_onesToSixes = document.getElementsByClassName("p1_onesToSixes");
+        game.calculate_sum();     // kallar på klassen game och funktioner som beräknar summa, bonus och totalsumma
+        game.calculate_bonus();
+        game.calculate_the_rest();
 
-    player1_onesToSixes.addEventListener("change", function() {
-        let sum = 0;
-        let tmp = 0;
+    });
+});
 
-        tmp = player1_1.value;
-        if (typeof(Number(tmp)) === "number") {
-            sum += Number(tmp);
-        }
+function throw_dice(event) {
+    let dice = new Dice();
+    dice.random_throw();   // kallar på klassen dice och funktion för att slumpa tärningar
 
-        tmp = player1_2.value;
-        if (typeof(Number(tmp)) === "number") {
-            sum += Number(tmp);
-        }
+    let remaining_throws = document.getElementById("remaining_throws");
 
-        tmp = player1_3.value;
-        if (typeof(Number(tmp)) === "number") {
-            sum += Number(tmp);
-        }
-
-        tmp = player1_4.value;
-        if (typeof(Number(tmp)) === "number") {
-            sum += Number(tmp);
-        }
-
-        tmp = player1_5.value;
-        if (typeof(Number(tmp)) === "number") {
-            sum += Number(tmp);
-        }
-
-        tmp = player1_6.value;
-        if (typeof(Number(tmp)) === "number") {
-            sum += Number(tmp);
-        }
-
+    if (remaining_throws.innerHTML >= 0) { // Minskar remaining throws med ett varje gång man klickar på knappen,
+                                            // och kör bara funktionen om remaining_throws är större än 0. 
         
-        sumField.value = sum;
+        remaining_throws.innerHTML -= 1;      
+    }
+
+    if (remaining_throws.innerHTML == 0) {  
+        let button_1 = document.getElementById("button_1");
+        button_1.innerHTML = "Next player!";
+    }
+
+    if (remaining_throws.innerHTML == -1) {  //återställer remaining throws
+        remaining_throws.innerHTML = 3;   
+
+        let button_1 = document.getElementById("button_1");
+        button_1.innerHTML = "Throw!";
         
-        let bonus = 0;
-        if (sum >= 63) {
-            bonus = 50;
+        for (let j = 1; j <= 5; j++) {
+            let image = document.getElementById("img_" + j);  //återställer tärningarna och ckeckar ur boxarna. 
+            image.src = "img/dice_" + 1 + ".png";
+            if (document.getElementById("check_" + j).checked) {
+                document.getElementById("check_" + j).checked = false;
+            }
         }
-        bonusField.value = bonus;
-    })
-    console.log(player1_onesToSixes);
-})
-
-
+    }
+}
 
