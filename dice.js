@@ -1,27 +1,25 @@
-class Die {
+class Dice {
     constructor() {
-        this.die = [1,2,3,4,5];
-
-
+        this.dice = [1,2,3,4,5];
     }
     random_throw() {
-        let dice = 0;
-        for (let element of this.die) {
+        let die = 0;
+        for (let element of this.dice) {
             if (!document.getElementById("check_" + element).checked) {
-                dice = Math.floor(Math.random() * 6) + 1;
+                die = Math.floor(Math.random() * 6) + 1;
                 for (let j = 1; j <= 6; j++) {
                     let image = document.getElementById("img_" + element);
-                    if (dice == j) {
+                    if (die == j) {
                         image.src = "img/dice_" + j + ".png";
                     }
                 }
-                 //diceResult.push(dice); // push nya values till array.
-                } //else {
-                    //diceResult.push(lastDiceResult[i-1]); // push nya values till array.
-                    //}
-                }
-                //lastDiceResult = diceResult.slice();
-                //updateTable(diceResult);        
-         //updateTable(diceResult);        
+                //diceResult.push(dice); // push nya values till array.
+            } //else {
+                //diceResult.push(lastDiceResult[i-1]); // push nya values till array.
+            //}
         }
+        //lastDiceResult = diceResult.slice();
+        //updateTable(diceResult);        
+        //updateTable(diceResult);        
     }
+}

@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //funktion för att slumpa tärningar
 function throw_dice(event) {
-    let die = new Die();
-    die.random_throw();
+    let dice = new Dice();
+    dice.random_throw();
 
     let remaining_throws = document.getElementById("remaining_throws");
 
