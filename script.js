@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
     let game = new Game();
-    let player = new Player();
     let button_1 = document.getElementById("button_1");
 
     button_1.addEventListener("click", throw_dice); 
