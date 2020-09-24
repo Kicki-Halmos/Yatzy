@@ -47,13 +47,3 @@ class Game { //Kicki
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
