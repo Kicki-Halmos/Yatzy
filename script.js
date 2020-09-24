@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
 //knapp för att slå tärningar
 
 //let lastDiceResult = [];  // skapar array för alla sista positioner tjarningar
-
+ 
 
 
 
@@ -75,7 +75,7 @@ function throw_dice(event) {
             //}
         }
         //lastDiceResult = diceResult.slice();
-        //updateTable(diceResult);         */
+        //updateTable(diceResult);         */        
     }
 
     if (remaining_throws.innerHTML == -1) { // När remaining throws är -1 så sätter vi om värdet på remaining throws till 3. 

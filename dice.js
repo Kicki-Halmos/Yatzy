@@ -1,6 +1,6 @@
 class Die {
     constructor() {
-        this.die = [1,2,3,4,5]
+        this.die = [1,2,3,4,5];
 
 
     }
@@ -15,12 +15,13 @@ class Die {
                         image.src = "img/dice_" + j + ".png";
                     }
                 }
-                //diceResult.push(dice); // push nya values till array.
-            } //else {
-            //diceResult.push(lastDiceResult[i-1]); // push nya values till array.
-            //}
+                 //diceResult.push(dice); // push nya values till array.
+                } //else {
+                    //diceResult.push(lastDiceResult[i-1]); // push nya values till array.
+                    //}
+                }
+                //lastDiceResult = diceResult.slice();
+                //updateTable(diceResult);        
+         //updateTable(diceResult);        
         }
-        //lastDiceResult = diceResult.slice();
-        //updateTable(diceResult);        
     }
-}
