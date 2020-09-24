@@ -1,12 +1,12 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     let game = new Game();
     let player = new Player();
     let button_1 = document.getElementById("button_1");
 
     button_1.addEventListener("click", throw_dice); //eventlyssnare som kör funktionen throw_dice
-    document.addEventListener("change", function (event) {
-        
-         
+    document.addEventListener("change", function(event) {
+
+
         game.calculate_sum();
         game.calculate_bonus();
         game.calculate_therest();
@@ -21,12 +21,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }*/
     });
 
-    document.getElementById("player1_name").addEventListener("change", function (event){
-        if (event.target.id == "player1_name"){
-        player.welcome();
+    document.getElementById("player1_name").addEventListener("change", function(event) {
+        if (event.target.id == "player1_name") {
+            player.welcome();
         }
     })
-   
+
 
 
 });
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
- //knapp för att slå tärningar
+//knapp för att slå tärningar
 
 //let lastDiceResult = [];  // skapar array för alla sista positioner tjarningar
 
@@ -47,13 +47,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //funktion för att slumpa tärningar
 function throw_dice(event) {
+    let die = new Die();
+    die.random_throw();
 
     let remaining_throws = document.getElementById("remaining_throws");
 
     if (remaining_throws.innerHTML >= 0) { // Minskar remaining throws med ett varje gång man klickar på knappen,
         remaining_throws.innerHTML -= 1; //och kör bara funktionen om remaining_throws är större än 0. 
 
-        
+        /* 
         let dice = 0;
         //let diceResult = []; // skapar array för alla positioner tjarningar
         for (let i = 1; i <= 5; i++) {
@@ -71,7 +73,7 @@ function throw_dice(event) {
             //}
         }
         //lastDiceResult = diceResult.slice();
-        //updateTable(diceResult);        
+        //updateTable(diceResult);         */
     }
 
     if (remaining_throws.innerHTML == -1) { // När remaining throws är -1 så sätter vi om värdet på remaining throws till 3. 
