@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     let game = new Game();
     let player = new Player();
+    let button_1 = document.getElementById("button_1");
+
+    button_1.addEventListener("click", throw_dice); //eventlyssnare som kör funktionen throw_dice
     document.addEventListener("change", function (event) {
         
          
@@ -8,15 +11,22 @@ document.addEventListener("DOMContentLoaded", function () {
         game.calculate_bonus();
         game.calculate_therest();
 
-        for(let i=1; i<=4; i++){
+        /*for(let i=1; i<=4; i++){
 
         if (event.target.id=="player" + i + "_name"){
             
             
             player.welcome();
         }
-    }
+    }*/
     });
+
+    document.getElementById("player1_name").addEventListener("change", function (event){
+        if (event.target.id == "player1_name"){
+        player.welcome();
+        }
+    })
+   
 
 
 });
@@ -28,8 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-let button_1 = document.getElementById("button_1"); //knapp för att slå tärningar
+ //knapp för att slå tärningar
 
 //let lastDiceResult = [];  // skapar array för alla sista positioner tjarningar
 
@@ -80,7 +89,7 @@ function throw_dice(event) {
 
 
 
-button_1.addEventListener("click", throw_dice); //eventlyssnare som kör funktionen throw_dice
+
 
 /* let updateTable = function (diceResult) { //define function för att fyller kolumner automatisk.
     const result = countDice(diceResult);// invoke a function countDice with diceResult
