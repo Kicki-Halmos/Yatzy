@@ -78,9 +78,17 @@ function throw_dice(event) {
         //updateTable(diceResult);         */        
     }
 
+    if (remaining_throws.innerHTML == 0) { // När remaining throws är -1 så sätter vi om värdet på remaining throws till 3. 
+        let button_1 = document.getElementById("button_1");
+        button_1.innerHTML = 'Next player!';
+    }
+
     if (remaining_throws.innerHTML == -1) { // När remaining throws är -1 så sätter vi om värdet på remaining throws till 3. 
         remaining_throws.innerHTML = 3; // I koden under så återställer vi tärningarna till 1 och gör icheckade boxar urcheckade. 
 
+        let button_1 = document.getElementById("button_1");
+        button_1.innerHTML = 'Throw!';
+        
         for (let j = 1; j <= 5; j++) {
             let image = document.getElementById("img_" + j);
             image.src = "img/dice_" + 1 + ".png";
