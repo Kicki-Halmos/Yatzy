@@ -1,16 +1,16 @@
 class Die {
     constructor() {
-        this.die = []
+        this.die = [1,2,3,4,5]
 
 
     }
     random_throw() {
         let dice = 0;
-        for (let i = 1; i <= 5; i++) {
-            if (!document.getElementById("check_" + i).checked) {
+        for (let element of this.die) {
+            if (!document.getElementById("check_" + element).checked) {
                 dice = Math.floor(Math.random() * 6) + 1;
                 for (let j = 1; j <= 6; j++) {
-                    let image = document.getElementById("img_" + i);
+                    let image = document.getElementById("img_" + element);
                     if (dice == j) {
                         image.src = "img/dice_" + j + ".png";
                     }
