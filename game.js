@@ -4,7 +4,7 @@ class Game { //Kicki
 
 
     }
-    calculate_sum() {  //summa 1-6 - Kicki
+    calculate_sum() {  //Summa 1-6 - Kicki
         for (let player of this.players) {
             let sum = 0;
             let elements = document.getElementsByClassName("player" + player);
@@ -19,7 +19,7 @@ class Game { //Kicki
         }
     }
 
-    calculate_bonus() { //kollar bonus - Erik
+    calculate_bonus() { //Kollar bonus - Erik
         for (let player of this.players) {
             let bonus = 0;
             if (document.getElementById("player" + player + "_sum").innerHTML >= 63) {
@@ -28,7 +28,7 @@ class Game { //Kicki
         }
     }
 
-    calculate_the_rest() {  //räknar ut totalen - Erik
+    calculate_the_rest() {  //Räknar ut totalen - Erik
         for (let player of this.players) {
 
             let sum = document.getElementById("player" + player + "_sum").innerHTML;
