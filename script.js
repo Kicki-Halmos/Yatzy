@@ -1,45 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-
-});
-
-//beräkning av summa 1-6or och testar bonus
-function calculate(event) {
-    event.preventDefault();
-    for (let i = 1; i <= 4; i++) {
-        let elements = document.getElementsByClassName("player" + i);
+    let game = new Game();
+    let player = new Player();
+    document.addEventListener("change", function (event) {
         
-        
-        let sum = 0;
-        let bonus = 0;
-        let total = 0;
-        for (let element of elements) {
-            sum += Number(element.value);
+         
+        game.calculate_sum();
+        game.calculate_bonus();
+        game.calculate_therest();
+
+        for(let i=1; i<=4; i++){
+
+        if (event.target.id=="player" + i + "_name"){
+            
+            
+            player.welcome();
         }
-        if (sum >= 63) {
-            bonus = 50;
-        }
-        let the_rest = document.getElementsByClassName("player" + i + "_rest");  //resten av fältens input hämtas och summeras
-        for (let rest of the_rest){
-            total += Number(rest.value);
-        }
-        total = total + sum + bonus;
-        document.getElementById("player" + i + "_sum").innerHTML = sum;
-        document.getElementById("player" + i + "_bonus").innerHTML = bonus;
-        document.getElementById("player" + i + "_total").innerHTML = total;
     }
-}
+    });
 
 
-//kör calculatefunctionen när man trycker enter
-document.addEventListener("keyup", function (event) {
-    /* if(event.code === "Enter"){
-         event.preventDefault();
-         calculate(event);
-     } */
-     
-    calculate(event);
 });
+
+
+
+
+
+
 
 
 
@@ -58,9 +44,9 @@ function throw_dice(event) {
     if (remaining_throws.innerHTML >= 0) { // Minskar remaining throws med ett varje gång man klickar på knappen,
         remaining_throws.innerHTML -= 1; //och kör bara funktionen om remaining_throws är större än 0. 
 
-        //event.preventDefault(); - behövs ej efter att ha flyttat ut throw-knappen ur dice-form.
+        
         let dice = 0;
-        let diceResult = []; // skapar array för alla positioner tjarningar
+        //let diceResult = []; // skapar array för alla positioner tjarningar
         for (let i = 1; i <= 5; i++) {
             if (!document.getElementById("check_" + i).checked) {
                 dice = Math.floor(Math.random() * 6) + 1;
