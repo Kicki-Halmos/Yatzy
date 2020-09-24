@@ -41,14 +41,14 @@ document.addEventListener("DOMContentLoaded", function() {
 //knapp för att slå tärningar
 
 //let lastDiceResult = [];  // skapar array för alla sista positioner tjarningar
-
+ 
 
 
 
 //funktion för att slumpa tärningar
 function throw_dice(event) {
-    let die = new Die();
-    die.random_throw();
+    let dice = new Dice();
+    dice.random_throw();
 
     let remaining_throws = document.getElementById("remaining_throws");
 
@@ -75,12 +75,20 @@ function throw_dice(event) {
             //}
         }
         //lastDiceResult = diceResult.slice();
-        //updateTable(diceResult);         */
+        //updateTable(diceResult);         */        
+    }
+
+    if (remaining_throws.innerHTML == 0) { // När remaining throws är -1 så sätter vi om värdet på remaining throws till 3. 
+        let button_1 = document.getElementById("button_1");
+        button_1.innerHTML = 'Next player!';
     }
 
     if (remaining_throws.innerHTML == -1) { // När remaining throws är -1 så sätter vi om värdet på remaining throws till 3. 
         remaining_throws.innerHTML = 3; // I koden under så återställer vi tärningarna till 1 och gör icheckade boxar urcheckade. 
 
+        let button_1 = document.getElementById("button_1");
+        button_1.innerHTML = 'Throw!';
+        
         for (let j = 1; j <= 5; j++) {
             let image = document.getElementById("img_" + j);
             image.src = "img/dice_" + 1 + ".png";
