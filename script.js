@@ -53,7 +53,9 @@ function throw_dice(event) {
     let remaining_throws = document.getElementById("remaining_throws");
 
     if (remaining_throws.innerHTML >= 0) { // Minskar remaining throws med ett varje gång man klickar på knappen,
-        remaining_throws.innerHTML -= 1; //och kör bara funktionen om remaining_throws är större än 0. 
+                                            //och kör bara funktionen om remaining_throws är större än 0. 
+        
+        remaining_throws.innerHTML -= 1; 
 
         /* 
         let dice = 0;
