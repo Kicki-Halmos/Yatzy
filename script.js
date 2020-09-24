@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() { //Kicki sätter scenen
     let game = new Game();
     let button_1 = document.getElementById("button_1");
 
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-function throw_dice(event) {
+function throw_dice(event) { //Thilde
     let dice = new Dice();
     dice.random_throw();   // kallar på klassen dice och funktion för att slumpa tärningar
 

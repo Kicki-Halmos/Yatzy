@@ -1,4 +1,4 @@
-class Dice {
+class Dice {    //Mariia
     constructor() {
         this.dice = [1, 2, 3, 4, 5];
     }
