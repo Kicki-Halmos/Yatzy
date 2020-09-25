@@ -21,7 +21,7 @@ class Game { //Kicki
 
     calculate_bonus() { //Kollar bonus - Erik
         for (let player of this.players) {
-            let bonus = 0;
+            
             if (document.getElementById("player" + player + "_sum").innerHTML >= 63) {
                 document.getElementById("player" + player + "_bonus").innerHTML = 50;
             }
