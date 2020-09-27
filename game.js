@@ -25,6 +25,9 @@ class Game { //Kicki
             if (document.getElementById("player" + player + "_sum").innerHTML >= 63) {
                 document.getElementById("player" + player + "_bonus").innerHTML = 50;
             }
+            else{
+                document.getElementById("player" + player + "_bonus").innerHTML = 0;
+            }
         }
     }
 
