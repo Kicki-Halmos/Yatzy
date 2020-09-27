@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() { //Kicki sätter scene
     button_1.addEventListener("click", throw_dice);
     document.addEventListener("change", function(event) {
 
-        game.calculate_sum(); // kallar på klassen game och funktioner som beräknar summa, bonus och totalsumma.
+        game.calculate_sum(); // Kallar på klassen game och funktioner som beräknar summa, bonus och totalsumma.
         game.calculate_bonus();
         game.calculate_the_rest();
 
